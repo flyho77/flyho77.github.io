@@ -133,9 +133,14 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
 .publication-list { border-top: 1px solid #cbd7cb; }
 .publication { display: grid; grid-template-columns: 52px 1fr; gap: 12px; padding-block: 13px; border-bottom: 1px solid #cbd7cb; }
 .publication-year { color: #456149; font: 700 .92rem/1.55 var(--mono); }
-.publication h3 { font-size: 1.02rem; line-height: 1.42; font-weight: 730; }
-.publication h3 a, .career-list h4 a { text-decoration-color: #849383; text-underline-offset: 3px; }
-.publication h3 a:hover, .career-list h4 a:hover { color: #31530e; }
+.publication h4 { font-size: 1.02rem; line-height: 1.42; font-weight: 730; }
+.publication h4 a, .career-list h4 a { text-decoration-color: #849383; text-underline-offset: 3px; }
+.publication h4 a:hover, .career-list h4 a:hover { color: #31530e; }
+.paper-shortcuts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.1rem 0; }
+.paper-shortcuts a { display: inline-block; color: #254a33; font-size: .94rem; font-weight: 700; border: 1px solid #9bab9c; border-radius: 4px; padding: .5rem .8rem; }
+.paper-shortcuts a:hover { background: #fff; }
+.paper-group + .paper-group { margin-top: 2.6rem; }
+.paper-group > h3 { font-size: 1.2rem; margin-bottom: .65rem; scroll-margin-top: 1.5rem; }
 .publication p { margin-top: 4px; color: var(--muted); font-size: .9rem; }
 .publication p.pub-alt { margin-top: 3px; }
 
@@ -188,8 +193,8 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
 .identity-layout aside p { margin: .3rem 0 .7rem; font-size:.95rem; }
 .work-index { background: #fbfcf9; padding-block: clamp(2.1rem,4vw,4rem); }
 .work-index h2 { font-size: clamp(1.7rem,3vw,2.4rem); letter-spacing:-.045em; margin-bottom:1.2rem; }
-.works { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:start; }
-.work-card { background:white; border:1px solid #cdd8d1; border-top:3px solid #526f60; border-radius:5px; padding:1.3rem 1.35rem; display:flex; flex-direction:column; min-height:16.2rem; }
+.works { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.work-card { background:white; border:1px solid #cdd8d1; border-top:3px solid #526f60; border-radius:5px; padding:1.3rem 1.35rem; display:flex; flex-direction:column; }
 .work-card h3 { font-size:1.36rem; line-height:1.35; letter-spacing:-.035em; margin:.35rem 0 .65rem; }
 .brief,.work-card details p { color:#3f4e45; }
 .work-card details { margin-top:auto; padding-top:1rem; }
@@ -199,6 +204,6 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
 .work-foot span { flex:1 1 auto; color:#526259; }
 .work-foot a { text-underline-offset:3px; font-weight:700; }
 .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-@media(max-width:950px){.works {grid-template-columns:repeat(2,minmax(0,1fr));}.identity-layout{gap:1.5rem;}}
+@media(max-width:950px){.identity-layout{gap:1.5rem;}}
 @media(max-width:640px){.works,.identity-layout{grid-template-columns:1fr;}.work-card{min-height:auto;}.identity-layout aside{padding-left:1rem;}.work-index h2{margin-bottom:1rem;}}
 .work-card > .brief + .work-foot { margin-top: auto; }
