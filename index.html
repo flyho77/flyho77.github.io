@@ -22,9 +22,9 @@
   </script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="style.css?v=folio-24">
-  <script src="site.js?v=folio-24" defer></script>
-  <script src="demo.js?v=folio-24" defer></script>
+  <link rel="stylesheet" href="style.css?v=folio-25">
+  <script src="site.js?v=folio-25" defer></script>
+  <script src="demo.js?v=folio-25" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,7 +85,7 @@
               <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3v-11zm6.5 0h3.8v1.5h.06c.53-1 1.83-1.8 3.64-1.8 3.9 0 4.5 2.3 4.5 5.300v6h-4v-5.300c0-1.300-.03-2.900-1.800-2.900s-2.100 1.400-2.100 2.800v5.400h-4.100v-11z"/></svg>
               LinkedIn
             </a>
-            <a class="btn" href="resume.pdf?v=folio-24" download="Hyunjin-Jang-Resume.pdf">
+            <a class="btn" href="resume.pdf?v=folio-25" download="Hyunjin-Jang-Resume.pdf">
               <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19.5h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
               이력서 PDF 다운로드
             </a>
@@ -362,7 +362,7 @@
             <article class="pj-panel" id="pj-ariadne" aria-labelledby="pj-ariadne-title">
               <p class="featured-meta"><span>CTF · AI 에이전트</span><span>개발 리드</span><span>v0.17.0</span><span>비공개 저장소</span></p>
               <h3 id="pj-ariadne-title">Ariadne-CTF</h3>
-              <p class="pj-lede">허가된 CTF와 실습 환경의 문제를 푸는 AI 에이전트입니다. 문제를 푸는 실행 환경과, 그 성능을 같은 조건에서 재는 평가 경로를 한 저장소에 담았습니다.</p>
+              <p class="pj-lede">허가된 CTF와 실습 환경의 문제를 푸는 AI 에이전트입니다. 문제를 푸는 실행 환경, 풀이 지식을 쌓는 파이프라인, 성능을 같은 조건에서 재는 평가 경로를 한 저장소에 담았습니다.</p>
 
               <div class="pj-grid">
                 <section class="pj-block">
@@ -387,6 +387,16 @@
                     </ol>
                   </div>
                   <div class="flow-row">
+                    <p class="flow-label">풀이 지식 · Skill 파이프라인</p>
+                    <ol class="flow">
+                      <li class="is-data"><b>원본 자료</b><span>분류해 둔 풀이 지식 원본</span></li>
+                      <li><b>초안 작성</b><span>작성 모델이 Skill 문서로 변환</span></li>
+                      <li><b>검수</b><span>별도 검수 모델이 계약에 맞는지 확인</span></li>
+                      <li><b>겹침 제외</b><span>벤치마크 과제와 출처가 겹치는 Skill 제거</span></li>
+                      <li class="is-out"><b>검색 색인</b><span>임베딩과 재순위로 찾는 Skill 데이터베이스</span></li>
+                    </ol>
+                  </div>
+                  <div class="flow-row">
                     <p class="flow-label">성능 평가 · CyBench</p>
                     <ol class="flow">
                       <li class="is-data"><b>CyBench 과제 40개</b><span>공식 벤치마크를 저장소 밖에서 가져옴</span></li>
@@ -396,7 +406,35 @@
                       <li class="is-out"><b>결과 기록</b><span>시도별 로그와 풀이 궤적, 요약 표</span></li>
                     </ol>
                   </div>
-                  <p class="case-note">에이전트 루프는 Nous Research의 Hermes Agent(MIT)에서 출발했고, CTF에 필요한 프로필과 도구만 남겨 다시 구성했습니다. 대회용 모드에서는 문제 현황판과 문제별 시간 제한도 관리합니다.</p>
+                  <p class="case-note">에이전트 루프는 Nous Research의 Hermes Agent(MIT)에서 출발했고, CTF에 필요한 프로필과 도구만 남겨 다시 구성했습니다.</p>
+                </section>
+
+                <section class="pj-block wide">
+                  <h4>세부 구현</h4>
+                  <ul class="impl">
+                    <li><b>고정된 도구 목록</b><span>고른 도구 세트가 모델에 보이는 전부입니다. 플러그인이나 MCP 서버를 불러와도 목록이 몰래 늘지 않습니다. 기본, 웹, 시각, OSINT, 고급, 전체 세트를 분야에 맞게 고릅니다.</span></li>
+                    <li><b>출력과 맥락 압축</b><span>명령 출력에서 ANSI 코드 같은 기계적 잡음만 걷어 모델에 넘기고 원본은 보존합니다. 대화가 길어지면 보조 모델이 중간 부분을 요약하고 앞뒤 맥락은 그대로 둡니다.</span></li>
+                    <li><b>하위 에이전트 위임</b><span>대화 기록을 물려받지 않는 독립 에이전트에 제한된 도구만 주고 과제를 맡깁니다. 반복 한도는 본 에이전트 90회, 하위 에이전트 50회가 기본입니다.</span></li>
+                    <li><b>코드 오케스트레이션</b><span>모델이 쓴 Python 스크립트가 도구를 RPC로 호출합니다. 여러 단계의 도구 호출을 한 번의 추론으로 묶습니다.</span></li>
+                    <li><b>헛돌기 방지</b><span>같은 인자의 도구 호출이 거듭 실패하면 더 실행하지 못하게 막습니다. 인수분해나 해시 크래킹 같은 무거운 계산에는 90초 제한을 걸고, 평가에서는 20턴 동안 진전이 없으면 새로 시작합니다.</span></li>
+                    <li><b>실행 전 보안 검사</b><span>명령을 실행하기 전에 터미널 주입 같은 위험 패턴을 검사합니다. 도구 결과에 섞여 들어온 프롬프트 주입 패턴도 걸러 냅니다.</span></li>
+                    <li><b>격리 실행</b><span>Bubblewrap 안에서 빈 환경으로 시작하고, 허용 목록에 있는 추론용 키만 넘깁니다. 클라우드나 GitHub 같은 다른 자격 증명은 전달하지 않습니다.</span></li>
+                    <li><b>대회 모드</b><span>문제 현황판과 문제별 풀이 상태를 관리합니다. 시간 제한을 넘기면 보류하고 다음 문제로 넘어가며, gdb·원격 접속·디컴파일 세션을 턴 사이에 유지합니다.</span></li>
+                    <li><b>풀이 후 학습</b><span>검증된 풀이가 끝나면 작업 폴더에 Skill 초안을 남깁니다. Skill을 읽은 직후 에이전트가 무엇을 했는지도 궤적에서 따로 분석합니다.</span></li>
+                  </ul>
+                </section>
+
+                <section class="pj-block wide">
+                  <h4>벤치마크 구성</h4>
+                  <dl class="specs">
+                    <div><dt>과제</dt><dd>40개</dd></div>
+                    <div><dt>시도</dt><dd>과제당 1회</dd></div>
+                    <div><dt>추론 한도</dt><dd>80단계</dd></div>
+                    <div><dt>시간 한도</dt><dd>90분</dd></div>
+                    <div><dt>병렬 실행</dt><dd>6개</dd></div>
+                    <div><dt>기본 도구</dt><dd>7개</dd></div>
+                  </dl>
+                  <p class="case-note">턴, 시간, 네트워크, 병렬 설정을 같게 두고 모델이나 설정 하나만 바꿔 비교합니다. 공개된 풀이 검색은 꺼 두고, 과제마다 별도의 네트워크와 포트를 씁니다. 결과에는 소스 커밋, 도구 목록 해시, 적용한 예산이 함께 기록됩니다.</p>
                 </section>
 
                 <section class="pj-block">
@@ -414,10 +452,9 @@
                   <h4>성과</h4>
                   <ul class="outcomes">
                     <li><strong class="good">45개</strong><span>에이전트가 근거를 정리할 때 쓰는 보조 명령. 같은 입력에는 같은 결과를 냅니다.</span></li>
-                    <li><strong class="good">40개 과제</strong><span>CyBench 전체를 같은 예산과 조건으로 돌리고, 설정만 바꿔 비교하는 평가 경로를 갖췄습니다.</span></li>
+                    <li><strong class="good">3가지 조건</strong><span>기본 에이전트, Skill 검색 추가, 단순 에이전트 대조군을 같은 예산으로 비교하는 평가 경로를 갖췄습니다.</span></li>
                     <li><strong class="good">518개</strong><span>테스트 파일. CTF 실행 환경의 회귀 테스트를 포함합니다.</span></li>
                   </ul>
-                  <p class="case-note">벤치마크 점수는 저장소에 싣지 않고 실행 기록으로만 남기는 원칙이라, 여기에도 풀이율은 적지 않았습니다.</p>
                 </section>
               </div>
             </article>
@@ -637,7 +674,7 @@
         <a href="https://github.com/flyho77">GitHub</a>
         <a href="https://www.linkedin.com/in/janghyunjin/">LinkedIn</a>
         <a href="https://orcid.org/0009-0004-2649-8350">ORCID</a>
-        <a href="resume.pdf?v=folio-24" download="Hyunjin-Jang-Resume.pdf">이력서 PDF</a>
+        <a href="resume.pdf?v=folio-25" download="Hyunjin-Jang-Resume.pdf">이력서 PDF</a>
         <a href="https://github.com/flyho77/flyho77.github.io">사이트 소스</a>
       </div>
     </div>
