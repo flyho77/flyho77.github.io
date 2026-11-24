@@ -17,7 +17,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--night); color: var(--ink); font: 1rem/1.65 var(--sans); word-break: keep-all; overflow-wrap: anywhere; }
 a { color: inherit; }
-p, h1, h2, h3, figure, dl, dd { margin: 0; }
+p, h1, h2, h3, h4, figure, dl, dd { margin: 0; }
 button, select { font: inherit; }
 :focus-visible { outline: 3px solid #588c08; outline-offset: 5px; }
 .hero :focus-visible, .site-header :focus-visible, .demo :focus-visible, .footer :focus-visible { outline-color: var(--lime); }
@@ -86,7 +86,7 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
 
 .project { background: var(--paper); }
 .project-inner, .demo-inner { display: grid; grid-template-columns: .9fr 1.15fr; align-items: start; gap: clamp(36px, 6vw, 95px); padding-block: clamp(64px, 8vw, 105px); }
-.project-heading h2, .demo h2, .archive h2 { margin-block: 13px 15px; font-size: clamp(2.25rem, 4.35vw, 4.1rem); line-height: 1.06; letter-spacing: -.07em; }
+.project-heading h2, .demo h2, .archive h2, .publications h2, .career h2 { margin-block: 13px 15px; font-size: clamp(2.25rem, 4.35vw, 4.1rem); line-height: 1.12; letter-spacing: -.07em; }
 .project-subtitle { max-width: 23em; margin-bottom: 24px; font-size: 1.18rem; line-height: 1.6; color: var(--muted); }
 .project-details { border-top: 1px solid var(--line); }
 .project-details > div { display: grid; grid-template-columns: minmax(90px, .25fr) 1fr; padding-block: 16px; gap: 12px; border-bottom: 1px solid var(--line); }
@@ -124,13 +124,38 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
 .archive-meta { color: #466413; font-size: .88rem; font-weight: 700; }
 .archive-card > p:not(.archive-meta) { color: var(--muted); margin-bottom: 16px; }
 .archive-card .text-link { margin-top: auto; }
+
+.publications { background: #edf1ea; border-block: 1px solid #d9e1d8; }
+.publications-inner { display: grid; grid-template-columns: .72fr 1.55fr; gap: clamp(32px, 5.5vw, 74px); padding-block: clamp(64px, 8vw, 105px); }
+.publications-heading p, .career-heading p { color: var(--muted); margin-block: 0 12px; }
+.publications-heading .text-link, .career-heading .text-link { color: #365611; }
+.publication-list, .career-list { list-style: none; margin: 0; padding: 0; }
+.publication-list { border-top: 1px solid #cbd7cb; }
+.publication { display: grid; grid-template-columns: 52px 1fr; gap: 12px; padding-block: 13px; border-bottom: 1px solid #cbd7cb; }
+.publication-year { color: #456149; font: 700 .92rem/1.55 var(--mono); }
+.publication h3 { font-size: 1.02rem; line-height: 1.42; font-weight: 730; }
+.publication h3 a, .career-list h4 a { text-decoration-color: #849383; text-underline-offset: 3px; }
+.publication h3 a:hover, .career-list h4 a:hover { color: #31530e; }
+.publication p { margin-top: 4px; color: var(--muted); font-size: .9rem; }
+.publication p.pub-alt { margin-top: 3px; }
+
+.career { background: var(--paper); }
+.career-inner { padding-block: clamp(64px, 8vw, 105px); }
+.career-heading { margin-bottom: 28px; }
+.career-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(25px, 5vw, 68px); }
+.career-columns h3 { margin-bottom: 8px; font-size: 1.15rem; }
+.career-list li { padding-block: 12px; border-top: 1px solid var(--line); }
+.career-date { color: #41651f; font: 700 .86rem var(--mono); }
+.career-list h4 { font-size: 1.02rem; }
+.career-list p { color: var(--muted); font-size: .91rem; }
+
 .footer { background: var(--night); color: #f2f5f3; border-top: 1px solid #2b3d45; }
 .footer-inner { min-height: 77px; padding-block: 16px; }
 .footer-inner p span { margin-left: 7px; color: var(--light-muted); font: .88rem var(--mono); }
 
 @media (max-width: 840px) {
   .wrap { width: min(620px, calc(100% - 48px)); }
-  .hero-inner, .project-inner, .demo-inner { grid-template-columns: 1fr; }
+  .hero-inner, .project-inner, .demo-inner, .publications-inner { grid-template-columns: 1fr; }
   .archive-grid { grid-template-columns: 1fr; }
   .hero-comparison { grid-template-columns: 1fr 1fr; }
 }
@@ -142,6 +167,10 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
   .brand-mark { padding: 4px; }
   .hero-inner { padding-block: 57px 64px; }
   .hero-comparison, .project-details > div { grid-template-columns: 1fr; gap: 7px; }
+  .career-columns { grid-template-columns: 1fr; }
+  nav { justify-content: flex-end; row-gap: 4px; }
+  nav a { font-size: .82rem; }
+  .publication { grid-template-columns: 38px 1fr; gap: 9px; }
   .footer-inner { flex-wrap: wrap; }
 }
 
