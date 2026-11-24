@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="장현진의 연구·개발 포트폴리오. 차량 및 AI 보안, 임베디드 암호, 데이터 분석, 계산수학 프로젝트와 논문 및 경력.">
+  <meta name="description" content="장현진의 연구·개발 포트폴리오. 차량 침입 탐지, AI 에이전트 보안, CTF 문제 풀이용 에이전트 프로젝트와 연구실적.">
   <meta name="theme-color" content="#0b1117">
   <link rel="canonical" href="https://flyho77.github.io/">
   <title>장현진 | 연구·개발 포트폴리오</title>
@@ -24,18 +24,16 @@
     </div>
   </header>
 
-<main id="main"><section class="identity-band"><div class="wrap identity-layout"><div><p class="folio-name">HYUNJIN JANG</p><h1>장현진 <span>포트폴리오</span></h1><p class="bio">차량 네트워크와 AI 에이전트의 보안을 연구합니다.<br>데이터 분석, 임베디드 구현, 평가 도구 개발에도 참여했습니다.</p></div><aside><strong>부산대학교</strong><p>컴퓨터공학부 인공지능전공<br>정보보호 및 Physical AI 연구실 학부연구생<br>지식재산융합 부전공</p><a class="text-link" href="resume.pdf?v=github-projects" download="Hyunjin-Jang-Resume.pdf">이력서 PDF 다운로드</a></aside></div></section><section id="projects" class="work-index"><div class="wrap"><h2>GitHub 프로젝트</h2><div class="works"><article class="work-card" id="research"><p class="field">차량 보안</p><h3>The Shift Ladder</h3><p class="brief">합성 데이터를 더해 학습한 차량 침입 탐지기가 다른 환경에서도 작동하는지 평가했습니다.</p><details><summary>작업 내용 <span class="sr">The Shift Ladder</span></summary><p>제1저자로 실험을 설계하고 Python과 PyTorch로 분석했습니다. 같은 횟수로 학습한 비교에서 고정 합성 변형의 탐지율은 50.25%p 올랐지만, 외부 데이터 3종에서는 정상 구간 대부분에 경보가 발생했습니다.</p></details><div class="work-foot" id="demo"><span>WISA 2026 · 제1저자</span><a href="can-results.html">결과 데모</a> <a href="https://github.com/flyho77/shift-ladder-can-ids-artifact">소스 코드</a></div></article>
+<main id="main"><section class="identity-band"><div class="wrap identity-layout"><div><p class="folio-name">HYUNJIN JANG</p><h1>장현진 <span>포트폴리오</span></h1><p class="bio">차량 네트워크와 AI 에이전트의 보안을 연구합니다.<br>데이터 분석, 임베디드 구현, 평가 도구 개발에도 참여했습니다.</p></div><aside><strong>부산대학교</strong><p>컴퓨터공학부 인공지능전공<br>정보보호 및 Physical AI 연구실 학부연구생<br>지식재산융합 부전공</p><a class="text-link" href="resume.pdf?v=ariadne-ctf" download="Hyunjin-Jang-Resume.pdf">이력서 PDF 다운로드</a></aside></div></section><section id="projects" class="work-index"><div class="wrap"><h2>GitHub 프로젝트</h2><div class="works"><article class="work-card" id="research"><p class="field">차량 보안</p><h3>The Shift Ladder</h3><p class="brief">합성 데이터를 더해 학습한 차량 침입 탐지기가 다른 환경에서도 작동하는지 평가했습니다.</p><details><summary>작업 내용 <span class="sr">The Shift Ladder</span></summary><p>제1저자로 실험을 설계하고 Python과 PyTorch로 분석했습니다. 같은 횟수로 학습한 비교에서 고정 합성 변형의 탐지율은 50.25%p 올랐지만, 외부 데이터 3종에서는 정상 구간 대부분에 경보가 발생했습니다.</p></details><div class="work-foot" id="demo"><span>WISA 2026 · 제1저자</span><a href="can-results.html">결과 데모</a> <a href="https://github.com/flyho77/shift-ladder-can-ids-artifact">소스 코드</a></div></article>
 <article class="work-card"><p class="field">AI 보안</p><h3>Where the Gates Leak</h3><p class="brief">같은 도구 호출을 여러 정책에 입력해 에이전트의 허용·차단 판단을 비교했습니다.</p><details><summary>작업 내용 <span class="sr">Where the Gates Leak</span></summary><p>제1저자로 평가 절차를 구성했습니다. AgentDojo 호출 기록 286건을 고정해 모델을 다시 호출하지 않고도 정책의 판단을 재현할 수 있게 했습니다.</p></details><div class="work-foot"><span>WISA 2026 · 제1저자</span><a href="https://github.com/flyho77/where-the-gates-leak-artifact">소스 코드</a></div></article>
 
 
 <article class="work-card"><p class="field">에이전트 보안</p><h3>Progent Update Integrity</h3><p class="brief">보안 정책을 수정한 뒤 실제 실행 권한이 의도대로 줄어드는지 검사했습니다.</p><details><summary>작업 내용 <span class="sr">Progent Update Integrity</span></summary><p>권한 확대를 잘못 승인하는 사례를 분석하고 검사기를 수정했습니다. 고정 평가 C4에서 개선 전 120/136건이던 권한 확대 승인이 개선 후 0/136건으로 줄었습니다.</p></details><div class="work-foot"><span>검증기 구현 · 재현 패키지</span><a href="https://github.com/flyho77/progent-update-integrity-artifact">소스 코드</a></div></article>
 
 
-<article class="work-card"><p class="field">실험 소프트웨어</p><h3>Ariadne-CTF</h3><p class="brief">CTF 실습에서 에이전트의 결과를 같은 조건으로 다시 평가하는 프로젝트를 이끌었습니다.</p><details><summary>작업 내용 <span class="sr">Ariadne-CTF</span></summary><p>격리된 실습 환경과 벤치마크 연동을 개발했습니다. 관련 플러그인과 실습 기능을 하나의 프로젝트로 관리했습니다.</p></details><div class="work-foot"><span>프로젝트 리드 · 개발 · 비공개 저장소</span></div></article>
-<article class="work-card"><p class="field">IoT 보안</p><h3>IoTPenBench</h3><p class="brief">IoT·산업 제어 프로토콜을 다루는 과제에서 에이전트를 평가하는 벤치마크입니다.</p><details><summary>작업 내용 <span class="sr">IoTPenBench</span></summary><p>Docker로 분리된 실험 환경에서 동일한 평가 조건을 구성하는 작업을 진행했습니다.</p></details><div class="work-foot"><span>벤치마크 · 실험 환경 · 비공개 저장소</span></div></article>
-<article class="work-card"><p class="field">오픈소스</p><h3>PentestGPT 포크</h3><p class="brief">CTF 실습을 실행하고 진행 상태를 확인하는 기능을 개선했습니다.</p><details><summary>작업 내용 <span class="sr">PentestGPT 포크</span></summary><p>GreyDGL/PentestGPT에서 포크한 저장소의 별도 브랜치에서 작업했습니다. 런타임 호환성과 실행 중 진행 상황 표시를 개선했습니다.</p></details><div class="work-foot"><span>포크 개발</span><a href="https://github.com/flyho77/PentestGPT/activity">GitHub 활동</a></div></article>
+<article class="work-card"><p class="field">CTF · AI 에이전트</p><h3>Ariadne-CTF</h3><p class="brief">보안 경진대회(CTF) 문제를 푸는 AI 에이전트입니다.</p><details><summary>작업 내용 <span class="sr">Ariadne-CTF</span></summary><p>에이전트 개발을 이끌고, 문제 풀이에 쓰는 플러그인과 실습 환경을 연동했습니다.</p></details><div class="work-foot"><span>프로젝트 리드 · 개발 · 비공개 저장소</span></div></article>
 
-<article class="work-card"><p class="field">계산수학</p><h3>콜라츠 수열 탐구</h3><p class="brief">콜라츠 수열을 나머지에 따라 분류하고 계산 실험을 기록했습니다.</p><div class="work-foot"><span>개인 연구 · Python · 비공개 저장소</span></div></article></div></div></section>    <section class="publications" id="publications" aria-labelledby="publications-title">
+</div></div></section>    <section class="publications" id="publications" aria-labelledby="publications-title">
       <div class="wrap publications-inner">
         <div class="publications-heading">
           <h2 id="publications-title">연구실적 · 논문 및 학회 발표</h2>
