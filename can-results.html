@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="장현진(flyho77)의 연구 포트폴리오. 차량 네트워크 침입 탐지, AI 에이전트 보안, 공개 재현 자료.">
+  <meta name="theme-color" content="#0b1117">
+  <link rel="canonical" href="https://flyho77.github.io/can-results.html">
+  <title>The Shift Ladder 실험 결과 | 장현진</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>flyho77</a>
+      <nav aria-label="주 메뉴"><a href="./#projects">프로젝트 목록으로</a></nav>
+    </div>
+  </header>
+
+<main id="main">    <section class="demo" id="demo" aria-labelledby="demo-title">
+      <div class="wrap demo-inner">
+        <div class="demo-intro">
+          <p class="eyebrow">CAN 침입 탐지 · 실험 결과</p>
+          <h1 id="demo-title">The Shift Ladder</h1>
+          <p>공개 결과표에 기록된 평균값입니다. 평가 조건을 바꾸어 같은 학습 방식이 환경에 따라 어떤 결과를 내는지 살펴볼 수 있습니다.</p>
+          <dl class="definitions">
+            <div><dt>탐지율</dt><dd>공격 구간을 탐지한 비율</dd></div>
+            <div><dt>오탐률</dt><dd>정상 구간을 잘못 경보한 비율</dd></div>
+          </dl>
+        </div>
+        <div class="demo-card">
+          <label for="condition">평가 조건</label>
+          <select id="condition">
+            <optgroup label="통제 실험">
+              <option value="fixed">고정 합성 변형</option>
+              <option value="sensitivity">민감도 평가</option>
+            </optgroup>
+            <optgroup label="독립 외부 데이터">
+              <option value="otids">OTIDS</option>
+              <option value="road">ROAD</option>
+              <option value="cantt">can-train-and-test</option>
+            </optgroup>
+          </select>
+          <div id="result" class="demo-result" aria-live="polite" aria-atomic="true">
+            <h3 id="result-title">고정 합성 변형 · 공격 탐지율</h3>
+            <p id="result-context">동일한 7,992회 학습 업데이트 · 시드 5개 평균</p>
+            <ul id="bars" class="bars">
+              <li><div><span>실측 데이터만</span><strong>49.74%</strong></div><div class="bar" aria-hidden="true"><i style="--value:49.745%"></i></div></li>
+              <li><div><span>실측 공격 재표집 +30%</span><strong>48.74%</strong></div><div class="bar" aria-hidden="true"><i style="--value:48.7406%"></i></div></li>
+              <li><div><span>Rule +30%</span><strong>99.99%</strong></div><div class="bar rule" aria-hidden="true"><i style="--value:99.9931%"></i></div></li>
+            </ul>
+            <p id="result-note" class="result-note">합성 데이터로 보강한 모델은 실측 데이터만 쓴 모델보다 탐지율이 50.25%p 높았습니다.</p>
+          </div>
+          <a id="result-source" class="text-link" href="https://github.com/flyho77/shift-ladder-can-ids-artifact/blob/main/experiments/02_matched_update/RESULTS_v1.md">이 결과의 원문 보기</a>
+          <noscript><p>다른 평가 조건을 선택하려면 JavaScript를 켜 주세요.</p></noscript>
+        </div>
+      </div>
+    </section></main></body></html>

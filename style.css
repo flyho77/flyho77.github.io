@@ -177,3 +177,28 @@ h1 { margin-block: 18px 22px; font-size: clamp(2.55rem, 5.25vw, 4.65rem); letter
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+.identity-band { background: #f4f1e9; border-bottom: 1px solid #cdcfc7; }
+.identity-layout { display: grid; grid-template-columns: 1.6fr 1fr; align-items: center; gap: 3rem; padding-block: clamp(2.4rem,5vw,4.6rem); }
+.folio-name,.field { font: 700 .86rem/1.6 var(--mono); letter-spacing: .065em; color: #37604a; }
+.identity-layout h1 { margin: .3rem 0 1rem; color: #182923; font-size: clamp(2.6rem,5vw,4.6rem); }
+.identity-layout h1 span { color: #475d51; font-weight: 500; }
+.bio { color: #354740; line-height: 1.8; font-size: 1.05rem; }
+.identity-layout aside { border-left: 2px solid #90a98f; padding-left: 1.6rem; color: #384a40; }
+.identity-layout aside strong { color: #192c22; }
+.identity-layout aside p { margin: .3rem 0 .7rem; font-size:.95rem; }
+.work-index { background: #fbfcf9; padding-block: clamp(2.1rem,4vw,4rem); }
+.work-index h2 { font-size: clamp(1.7rem,3vw,2.4rem); letter-spacing:-.045em; margin-bottom:1.2rem; }
+.works { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:start; }
+.work-card { background:white; border:1px solid #cdd8d1; border-top:3px solid #526f60; border-radius:5px; padding:1.3rem 1.35rem; display:flex; flex-direction:column; min-height:16.2rem; }
+.work-card h3 { font-size:1.36rem; line-height:1.35; letter-spacing:-.035em; margin:.35rem 0 .65rem; }
+.brief,.work-card details p { color:#3f4e45; }
+.work-card details { margin-top:auto; padding-top:1rem; }
+.work-card summary { cursor:pointer; color:#315840; font-size:.92rem; font-weight:700; }
+.work-card details p { margin-top:.5rem; font-size:.94rem; }
+.work-foot { display:flex; flex-wrap:wrap; align-items:baseline; gap:.65rem; border-top:1px solid #dce2db; margin-top:.8rem; padding-top:.7rem; font-size:.85rem; }
+.work-foot span { flex:1 1 auto; color:#526259; }
+.work-foot a { text-underline-offset:3px; font-weight:700; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media(max-width:950px){.works {grid-template-columns:repeat(2,minmax(0,1fr));}.identity-layout{gap:1.5rem;}}
+@media(max-width:640px){.works,.identity-layout{grid-template-columns:1fr;}.work-card{min-height:auto;}.identity-layout aside{padding-left:1rem;}.work-index h2{margin-bottom:1rem;}}
+.work-card > .brief + .work-foot { margin-top: auto; }

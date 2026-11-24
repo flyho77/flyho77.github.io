@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="장현진(flyho77)의 연구 포트폴리오. 차량 네트워크 침입 탐지, AI 에이전트 보안, 공개 재현 자료.">
+  <meta name="description" content="장현진의 연구·개발 포트폴리오. 차량 및 AI 보안, 임베디드 암호, 데이터 분석, 계산수학 프로젝트와 논문 및 경력.">
   <meta name="theme-color" content="#0b1117">
   <link rel="canonical" href="https://flyho77.github.io/">
-  <title>장현진 | CAN IDS 연구 포트폴리오</title>
+  <title>장현진 | 연구·개발 포트폴리오</title>
   <link rel="stylesheet" href="style.css">
-  <script src="demo.js" defer></script>
+
 </head>
 <body>
   <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -16,8 +16,6 @@
     <div class="wrap header-inner">
       <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>flyho77</a>
       <nav aria-label="주 메뉴">
-        <a href="#research">연구</a>
-        <a href="#demo">결과 데모</a>
         <a href="#projects">프로젝트</a>
         <a href="#publications">논문</a>
         <a href="#career">경력</a>
@@ -26,147 +24,21 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow identity">장현진 <span aria-hidden="true">/</span> HYUNJIN JANG</p>
-          <h1 id="hero-title">차량 네트워크<br>침입 탐지 연구</h1>
-          <p class="hero-description">부산대학교 학부연구생으로 차량 내부 통신망(CAN)의 침입 탐지와 AI 에이전트의 보안 정책을 연구합니다.</p>
-          <ul class="interests" aria-label="현재 관심 분야">
-            <li>자동차 보안</li><li>AI 에이전트 보안</li><li>재현 가능한 평가</li>
-          </ul>
-          <div class="actions">
-            <a class="button primary" href="#research">대표 프로젝트 보기</a>
-            <a class="button outline" href="resume.pdf" download="Hyunjin-Jang-Resume.pdf">이력서 PDF 다운로드</a>
-          </div>
-        </div>
-
-        <figure class="hero-data" aria-labelledby="hero-chart-title">
-          <div class="figure-top"><span>THE SHIFT LADDER</span><span>WISA 2026</span></div>
-          <h2 id="hero-chart-title">평가 환경이 달라지면</h2>
-          <div class="hero-comparison">
-            <div class="hero-metric">
-              <span class="metric-label">통제된 합성 변형</span>
-              <strong>+50.25<span>%p</span></strong>
-              <p>실측 데이터만 사용했을 때 대비 탐지율 변화</p>
-              <div class="ticks good" aria-hidden="true"><i></i></div>
-            </div>
-            <div class="hero-metric">
-              <span class="metric-label">외부 데이터 3종</span>
-              <strong>≈100<span>%</span></strong>
-              <p>학습 환경의 판정 기준을 적용했을 때 오탐률</p>
-              <div class="ticks bad" aria-hidden="true"><i></i></div>
-            </div>
-          </div>
-          <figcaption>Rule +30% 설정. 탐지율 변화와 오탐률은 서로 다른 지표입니다.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="project" id="research" aria-labelledby="project-title">
-      <div class="wrap project-inner">
-        <div class="project-heading">
-          <p class="eyebrow">대표 프로젝트 <span aria-hidden="true">/</span> WISA 2026</p>
-          <h2 id="project-title" lang="en">The Shift Ladder</h2>
-          <p class="project-subtitle">규칙 기반 합성 데이터가 CAN 침입 탐지에 도움이 되는 조건과 한계</p>
-          <div class="actions">
-            <a class="button dark" href="#demo">결과 데모 열기</a>
-            <a class="text-link" href="https://github.com/flyho77/shift-ladder-can-ids-artifact">연구 소스 코드</a>
-            <a class="text-link" href="https://wisa.or.kr/accepted">학회 채택 목록</a>
-          </div>
-        </div>
-        <dl class="project-details">
-          <div>
-            <dt>문제 정의</dt>
-            <dd>실제 공격 데이터가 제한적인 상황에서 합성 데이터로 학습을 보강하면, 새로운 공격 변형과 독립적인 외부 데이터에서도 탐지 성능이 개선될까?</dd>
-          </div>
-          <div>
-            <dt>역할</dt>
-            <dd>제1저자로서 평가 설계, 실험, 결과 분석과 논문 발표를 맡았습니다. 실험 설정·결과표·검증 기록을 공개 재현 패키지로 정리했습니다.</dd>
-          </div>
-          <div>
-            <dt>기술과 실험 설계</dt>
-            <dd>Python, PyTorch, scikit-learn으로 CAN 프레임 윈도우를 평가했습니다. Car-Hacking에서 모델과 판정 기준을 정하고, 통제된 합성 변형과 독립적인 외부 데이터 3종에서 성능을 비교했습니다.</dd>
-          </div>
-          <div>
-            <dt>결과</dt>
-            <dd>학습 업데이트 수를 동일하게 맞춘 비교에서 탐지율은 고정 합성 변형에서 50.25%p, 민감도 평가에서 16.90%p 올랐습니다. 외부 3종에서는 오탐률이 거의 100%였고, 오탐률 상한 1% 이하에서 탐지율은 0%였습니다.</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="demo" id="demo" aria-labelledby="demo-title">
-      <div class="wrap demo-inner">
-        <div class="demo-intro">
-          <p class="eyebrow">실험 결과 데모</p>
-          <h2 id="demo-title">조건을 바꿔<br>결과 비교하기</h2>
-          <p>공개 결과표에 기록된 평균값입니다. 평가 조건을 바꾸어 같은 학습 방식이 환경에 따라 어떤 결과를 내는지 살펴볼 수 있습니다.</p>
-          <dl class="definitions">
-            <div><dt>탐지율</dt><dd>공격 구간을 탐지한 비율</dd></div>
-            <div><dt>오탐률</dt><dd>정상 구간을 잘못 경보한 비율</dd></div>
-          </dl>
-        </div>
-        <div class="demo-card">
-          <label for="condition">평가 조건</label>
-          <select id="condition">
-            <optgroup label="통제 실험">
-              <option value="fixed">고정 합성 변형</option>
-              <option value="sensitivity">민감도 평가</option>
-            </optgroup>
-            <optgroup label="독립 외부 데이터">
-              <option value="otids">OTIDS</option>
-              <option value="road">ROAD</option>
-              <option value="cantt">can-train-and-test</option>
-            </optgroup>
-          </select>
-          <div id="result" class="demo-result" aria-live="polite" aria-atomic="true">
-            <h3 id="result-title">고정 합성 변형 · 공격 탐지율</h3>
-            <p id="result-context">동일한 7,992회 학습 업데이트 · 시드 5개 평균</p>
-            <ul id="bars" class="bars">
-              <li><div><span>실측 데이터만</span><strong>49.74%</strong></div><div class="bar" aria-hidden="true"><i style="--value:49.745%"></i></div></li>
-              <li><div><span>실측 공격 재표집 +30%</span><strong>48.74%</strong></div><div class="bar" aria-hidden="true"><i style="--value:48.7406%"></i></div></li>
-              <li><div><span>Rule +30%</span><strong>99.99%</strong></div><div class="bar rule" aria-hidden="true"><i style="--value:99.9931%"></i></div></li>
-            </ul>
-            <p id="result-note" class="result-note">합성 데이터로 보강한 모델은 실측 데이터만 쓴 모델보다 탐지율이 50.25%p 높았습니다.</p>
-          </div>
-          <a id="result-source" class="text-link" href="https://github.com/flyho77/shift-ladder-can-ids-artifact/blob/main/experiments/02_matched_update/RESULTS_v1.md">이 결과의 원문 보기</a>
-          <noscript><p>다른 평가 조건을 선택하려면 JavaScript를 켜 주세요.</p></noscript>
-        </div>
-      </div>
-    </section>
-
-    <section class="archive" id="projects" aria-labelledby="projects-title">
-      <div class="wrap">
-        <h2 id="projects-title">다른 GitHub 작업</h2>
-        <div class="archive-grid">
-          <article class="archive-card">
-            <p class="archive-meta">WISA 2026 · 제1저자</p>
-            <h3 lang="en">Where the Gates Leak</h3>
-            <p>LLM 에이전트의 도구 호출 정책이 의도한 판단을 내리는지 점검했습니다. 기록된 AgentDojo 호출 286건을 재생하고, 정책별 허용·차단 판단을 비교할 수 있는 재현 자료를 공개했습니다.</p>
-            <a class="text-link" href="https://github.com/flyho77/where-the-gates-leak-artifact">연구 저장소</a>
-          </article>
-          <article class="archive-card">
-            <p class="archive-meta">정책 업데이트 검증 · 제1저자</p>
-            <h3 lang="en">Progent Update Integrity</h3>
-            <p>권한을 축소하려는 정책 변경이 실행 시점에도 같은 의미인지 검증했습니다. 공개 자료에는 수정한 검증기의 테스트와 릴리스 체크섬이 포함됩니다.</p>
-            <a class="text-link" href="https://github.com/flyho77/progent-update-integrity-artifact">연구 저장소</a>
-          </article>
-          <article class="archive-card">
-            <p class="archive-meta">오픈소스 포크 · 엔지니어링</p>
-            <h3 lang="en">PentestGPT</h3>
-            <p>GreyDGL/PentestGPT 포크의 CTF 실험 브랜치에서 실습 실행 환경과 진행 상태 표시를 개선했습니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="publications" id="publications" aria-labelledby="publications-title">
+<main id="main"><section class="identity-band"><div class="wrap identity-layout"><div><p class="folio-name">HYUNJIN JANG</p><h1>장현진 <span>포트폴리오</span></h1><p class="bio">차량 네트워크와 AI 에이전트의 보안을 연구합니다.<br>데이터 분석, 임베디드 구현, 평가 도구 개발에도 참여했습니다.</p></div><aside><strong>부산대학교</strong><p>컴퓨터공학부 인공지능전공<br>정보보호 및 Physical AI 연구실 학부연구생<br>지식재산융합 부전공</p><a class="text-link" href="resume.pdf" download="Hyunjin-Jang-Resume.pdf">이력서 PDF 다운로드</a></aside></div></section><section id="projects" class="work-index"><div class="wrap"><h2>프로젝트</h2><div class="works"><article class="work-card" id="research"><p class="field">차량 보안</p><h3>The Shift Ladder</h3><p class="brief">합성 데이터를 더해 학습한 차량 침입 탐지기가 다른 환경에서도 작동하는지 평가했습니다.</p><details><summary>작업 내용 <span class="sr">The Shift Ladder</span></summary><p>제1저자로 실험을 설계하고 Python과 PyTorch로 분석했습니다. 같은 횟수로 학습한 비교에서 고정 합성 변형의 탐지율은 50.25%p 올랐지만, 외부 데이터 3종에서는 정상 구간 대부분에 경보가 발생했습니다.</p></details><div class="work-foot" id="demo"><span>WISA 2026 · 제1저자</span><a href="can-results.html">결과 데모</a> <a href="https://github.com/flyho77/shift-ladder-can-ids-artifact">소스 코드</a></div></article>
+<article class="work-card"><p class="field">AI 보안</p><h3>Where the Gates Leak</h3><p class="brief">같은 도구 호출을 여러 정책에 입력해 에이전트의 허용·차단 판단을 비교했습니다.</p><details><summary>작업 내용 <span class="sr">Where the Gates Leak</span></summary><p>제1저자로 평가 절차를 구성했습니다. AgentDojo 호출 기록 286건을 고정해 모델을 다시 호출하지 않고도 정책의 판단을 재현할 수 있게 했습니다.</p></details><div class="work-foot"><span>WISA 2026 · 제1저자</span><a href="https://github.com/flyho77/where-the-gates-leak-artifact">소스 코드</a></div></article>
+<article class="work-card"><p class="field">데이터 분석</p><h3>임대보증금 반환보증 위험 예측</h3><p class="brief">주택도시보증공사(HUG)가 제안한 과제로, 반환보증의 위험을 예측하는 모델을 개발했습니다.</p><details><summary>작업 내용 <span class="sr">임대보증금 반환보증 위험 예측</span></summary><p>Team infosec의 팀원으로 서비스에 사용할 머신러닝 예측 모델을 담당했습니다.</p></details><div class="work-foot"><span>DIVE 2025 · 팀 프로젝트</span></div></article>
+<article class="work-card"><p class="field">AI 포렌식</p><h3>AI 생성 이미지 탐지기 평가</h3><p class="brief">이미지 압축과 크기 변경이 생성 이미지 판별에 미치는 영향을 조사했습니다.</p><details><summary>작업 내용 <span class="sr">AI 생성 이미지 탐지기 평가</span></summary><p>제1저자로 Swin-T와 CNNSpot의 판별 결과를 비교했습니다. JPEG 압축, 리사이즈, 흐림, 노이즈 조건에서 탐지기가 어떤 변형에 취약한지 분석했습니다.</p></details><div class="work-foot"><span>CISC-S 2026 · 제1저자</span></div></article>
+<article class="work-card"><p class="field">에이전트 보안</p><h3>Progent Update Integrity</h3><p class="brief">보안 정책을 수정한 뒤 실제 실행 권한이 의도대로 줄어드는지 검사했습니다.</p><details><summary>작업 내용 <span class="sr">Progent Update Integrity</span></summary><p>권한 확대를 잘못 승인하는 사례를 분석하고 검사기를 수정했습니다. 고정 평가 C4에서 개선 전 120/136건이던 권한 확대 승인이 개선 후 0/136건으로 줄었습니다.</p></details><div class="work-foot"><span>검증기 구현 · 재현 패키지</span><a href="https://github.com/flyho77/progent-update-integrity-artifact">소스 코드</a></div></article>
+<article class="work-card"><p class="field">임베디드 보안</p><h3>경량 1D CNN 기반 CAN 탐지</h3><p class="brief">차량용 마이크로컨트롤러에서 여러 공격 유형을 분류할 수 있도록 모델을 경량화했습니다.</p><details><summary>작업 내용 <span class="sr">경량 1D CNN 기반 CAN 탐지</span></summary><p>제1저자로 1D CNN을 설계·평가했습니다. 연구에서 비교한 기준 모델 대비 크기는 75.2% 줄었고 STM32에서 추론 속도는 3.7배가 됐습니다.</p></details><div class="work-foot"><span>WISA 2025 · 제1저자</span></div></article>
+<article class="work-card"><p class="field">암호 구현</p><h3>경량 환경의 NTRU+</h3><p class="brief">자원이 제한된 환경에서 양자내성암호 NTRU+를 구현하고 성능을 평가했습니다.</p><details><summary>작업 내용 <span class="sr">경량 환경의 NTRU+</span></summary><p>경량 환경에서 암호 연산을 구현한 연구로 제20회 부산미래과학자상 대학 공학부문 우수상을 받았습니다.</p></details><div class="work-foot"><span>구현 · 성능 평가</span></div></article>
+<article class="work-card"><p class="field">실험 소프트웨어</p><h3>Ariadne-CTF</h3><p class="brief">CTF 실습에서 에이전트의 결과를 같은 조건으로 다시 평가하는 프로젝트를 이끌었습니다.</p><details><summary>작업 내용 <span class="sr">Ariadne-CTF</span></summary><p>격리된 실습 환경과 벤치마크 연동을 개발했습니다. 관련 플러그인과 실습 기능을 하나의 프로젝트로 관리했습니다.</p></details><div class="work-foot"><span>프로젝트 리드 · 개발</span></div></article>
+<article class="work-card"><p class="field">IoT 보안</p><h3>IoTPenBench</h3><p class="brief">IoT·산업 제어 프로토콜을 다루는 과제에서 에이전트를 평가하는 벤치마크입니다.</p><details><summary>작업 내용 <span class="sr">IoTPenBench</span></summary><p>Docker로 분리된 실험 환경에서 동일한 평가 조건을 구성하는 작업을 진행했습니다.</p></details><div class="work-foot"><span>벤치마크 · 실험 환경</span></div></article>
+<article class="work-card"><p class="field">오픈소스</p><h3>PentestGPT 포크</h3><p class="brief">CTF 실습을 실행하고 진행 상태를 확인하는 기능을 개선했습니다.</p><details><summary>작업 내용 <span class="sr">PentestGPT 포크</span></summary><p>GreyDGL/PentestGPT에서 포크한 저장소의 별도 브랜치에서 작업했습니다. 런타임 호환성과 실행 중 진행 상황 표시를 개선했습니다.</p></details><div class="work-foot"><span>포크 개발</span></div></article>
+<article class="work-card"><p class="field">공급망 보안</p><h3>소프트웨어 공급망 보안</h3><p class="brief">Best of the Best 13기 보안컨설팅 트랙에서 진행한 팀 프로젝트입니다.</p><div class="work-foot"><span>BoB 13기 · 팀 연구</span></div></article>
+<article class="work-card"><p class="field">계산수학</p><h3>콜라츠 수열 탐구</h3><p class="brief">콜라츠 수열을 나머지에 따라 분류하고 계산 실험을 기록했습니다.</p><div class="work-foot"><span>개인 연구 · Python</span></div></article></div></div></section>    <section class="publications" id="publications" aria-labelledby="publications-title">
       <div class="wrap publications-inner">
         <div class="publications-heading">
           <h2 id="publications-title">논문 및 학회 발표</h2>
-          <p>차량 침입 탐지, AI 보안, 자율 시스템의 신뢰성을 다룬 연구입니다.</p>
           <a class="text-link" href="https://infosec.pusan.ac.kr/researcher/hyunjin#publications">부산대 연구실 연구실적</a>
         </div>
         <ul class="publication-list" aria-label="논문 및 학회 발표 목록">
@@ -185,7 +57,7 @@
           </li>
           <li class="publication">
             <span class="publication-year">2026</span>
-            <div><h3><a href="https://kr.linkedin.com/in/janghyunjin">An Empirical Study on the Robustness and Failure Modes of AI-Generated Image Detectors</a></h3>
+            <div><h3>An Empirical Study on the Robustness and Failure Modes of AI-Generated Image Detectors</h3>
               <p>CISC-S 2026 <span aria-hidden="true">·</span> 제1저자</p>
             </div>
           </li>
@@ -227,13 +99,13 @@
           </li>
           <li class="publication">
             <span class="publication-year">2026</span>
-            <div><h3><a href="https://infosec.pusan.ac.kr/researcher/hyunjin#publications">DRSS: Dual-Rail Context Virtualization for Ultra-Long-Running Security Agents</a></h3>
+            <div><h3>DRSS: Dual-Rail Context Virtualization for Ultra-Long-Running Security Agents</h3>
               <p>CISC-W 2026 <span aria-hidden="true">·</span> 공저</p>
             </div>
           </li>
           <li class="publication">
             <span class="publication-year">2026</span>
-            <div><h3><a href="https://infosec.pusan.ac.kr/researcher/hyunjin#publications">Safe, Unfiltered, Cyber: A Comparative Study of LLM type</a></h3>
+            <div><h3>Safe, Unfiltered, Cyber: A Comparative Study of LLM type</h3>
               <p>한국정보보호학회 영남지부 학술대회 <span aria-hidden="true">·</span> 공저</p>
             </div>
           </li>
@@ -245,13 +117,13 @@
           </li>
           <li class="publication">
             <span class="publication-year">2026</span>
-            <div><h3><a href="https://infosec.pusan.ac.kr/researcher/hyunjin#publications">Where&#x27;s the Key? Nowhere: Randomized Derivation and Scattering Against MITM Attacks</a></h3>
+            <div><h3>Where&#x27;s the Key? Nowhere: Randomized Derivation and Scattering Against MITM Attacks</h3>
               <p>CISC-S 2026 <span aria-hidden="true">·</span> 공저</p>
             </div>
           </li>
           <li class="publication">
             <span class="publication-year">2026</span>
-            <div><h3><a href="https://infosec.pusan.ac.kr/researcher/hyunjin#publications">Fidelity-Guided Multi-View Text Reconstruction from Exposed Overlapping RAG Embeddings</a></h3><p class="pub-alt">연구실 목록과 <a href="https://www.icisc.org/program">학회 프로그램</a>의 저자 표기가 다릅니다.</p>
+            <div><h3>Fidelity-Guided Multi-View Text Reconstruction from Exposed Overlapping RAG Embeddings</h3><p class="pub-alt">연구실 목록과 <a href="https://www.icisc.org/program">학회 프로그램</a>의 저자 표기가 다릅니다.</p>
               <p>ICISC 2026 <span aria-hidden="true">·</span> 저자 표기 확인 중</p>
             </div>
           </li>
@@ -275,7 +147,7 @@
           </li>
           <li class="publication">
             <span class="publication-year">2025</span>
-            <div><h3><a href="https://infosec.pusan.ac.kr/researcher/hyunjin#publications">Adversarial Attacks on Autonomous Systems: Emerging Threats</a></h3>
+            <div><h3>Adversarial Attacks on Autonomous Systems: Emerging Threats</h3>
               <p>CISC-W 2025 <span aria-hidden="true">·</span> 공저</p>
             </div>
           </li>
@@ -288,8 +160,6 @@
       <div class="wrap career-inner">
         <div class="career-heading">
           <h2 id="career-title">경력 및 수상</h2>
-          <p>부산대학교 컴퓨터공학부 인공지능전공 · 지식재산융합 부전공</p>
-          <a class="text-link" href="https://kr.linkedin.com/in/janghyunjin/en">LinkedIn 프로필</a>
         </div>
         <div class="career-columns">
           <div>
@@ -298,7 +168,7 @@
               <!-- experience:start -->
               <li>
                 <span class="career-date">2025.02–현재</span>
-                <div><h4><a href="https://infosec.pusan.ac.kr/researcher/hyunjin">부산대학교 정보보호 및 Physical AI 연구실</a></h4><p>학부연구생 · 차량 네트워크 침입 탐지와 AI 에이전트 보안 연구</p></div>
+                <div><h4>부산대학교 정보보호 및 Physical AI 연구실</h4><p>학부연구생 · 차량 네트워크 침입 탐지와 AI 에이전트 보안 연구</p></div>
               </li>
               <li>
                 <span class="career-date">2026.05–2027.05</span>
@@ -306,7 +176,7 @@
               </li>
               <li>
                 <span class="career-date">2024.07–2025.03</span>
-                <div><h4><a href="https://kr.linkedin.com/in/janghyunjin/en">Best of the Best 13기</a></h4><p>보안컨설팅 트랙 · 소프트웨어 공급망 보안 팀 프로젝트</p></div>
+                <div><h4>Best of the Best 13기</h4><p>보안컨설팅 트랙 · 소프트웨어 공급망 보안 팀 프로젝트</p></div>
               </li>
               <li>
                 <span class="career-date">2024.01–2025.01</span>
@@ -333,15 +203,15 @@
               </li>
               <li>
                 <span class="career-date">2025.11</span>
-                <div><h4><a href="https://kr.linkedin.com/in/janghyunjin/en">동남권 사이버 방어 경진대회</a></h4><p>동남권 부문 1위 · 한국인터넷진흥원장상</p></div>
+                <div><h4>동남권 사이버 방어 경진대회</h4><p>동남권 부문 1위 · 한국인터넷진흥원장상</p></div>
               </li>
               <li>
                 <span class="career-date">2025.08</span>
-                <div><h4><a href="https://kr.linkedin.com/in/janghyunjin/en">DIVE 2025 Global Data Hackathon</a></h4><p>우수상 · 부산광역시장상 · HUG 임대보증금 반환보증 위험 예측 모델 개발</p></div>
+                <div><h4>DIVE 2025 Global Data Hackathon</h4><p>우수상 · 부산광역시장상</p></div>
               </li>
               <li>
                 <span class="career-date">2024.12</span>
-                <div><h4><a href="https://kr.linkedin.com/in/janghyunjin/en">제20회 부산미래과학자상</a></h4><p>대학 공학부문 우수상 · 경량 환경의 NTRU+ 구현 및 성능 평가</p></div>
+                <div><h4>제20회 부산미래과학자상</h4><p>대학 공학부문 우수상</p></div>
               </li>
               <!-- awards:end -->
             </ul>
@@ -354,7 +224,7 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <p><strong>장현진</strong> <span>flyho77</span></p>
-      <div><a href="https://github.com/flyho77">GitHub</a><a href="https://github.com/flyho77/flyho77.github.io">사이트 소스</a><a href="resume.pdf" download="Hyunjin-Jang-Resume.pdf">이력서 PDF</a></div>
+      <div><a href="https://github.com/flyho77/flyho77.github.io">사이트 소스</a></div>
     </div>
   </footer>
 </body>
